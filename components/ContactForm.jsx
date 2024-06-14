@@ -25,7 +25,7 @@ const ContactForm = () => {
             htmlFor="last-name"
             className="block text-sm font-semibold leading-6 text-gray-900"
           >
-            Apellidos
+            Cargo
           </label>
           <div className="mt-2.5">
             <input
