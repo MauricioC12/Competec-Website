@@ -14,7 +14,6 @@ async function addDataToFireStore(name, position, company, email, phone, service
       service: service,
       message: message
     });
-    console.log("Document written with Id: ", docRef.id);
     return true;
   } catch (error) {
     console.error("Error adding document ", error)
@@ -30,6 +29,7 @@ const ContactForm = () => {
   const [phone, setPhone] = useState('');
   const [service, setService] = useState('');
   const [message, setMessage] = useState('');
+  const [messageSent, setMessageSent] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -42,8 +42,10 @@ const ContactForm = () => {
       setPhone("")
       setService("")
       setMessage("")
-
-      alert("Data added to firestore DB!!")
+      setMessageSent(true)
+      setTimeout(() => {
+        setMessageSent(false)
+      }, 3000);
     }
   }
 
@@ -229,8 +231,10 @@ const ContactForm = () => {
         >
           Enviar Mensaje
         </button>
+        {messageSent && (
+          <p className="mt-2 text-center text-green-600">Mensaje enviado!</p>
+        )}
       </div>
-      {status && <p>{status}</p>}
     </form>
   );
 };

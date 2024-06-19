@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const Partners = () => {
   return (
     <div className="flex items-center justify-center py-28 px-6 lg:px-48">
@@ -14,30 +12,27 @@ const Partners = () => {
           </div>
           <div className="h-full transition flex items-center justify-center">
             <div className="relative space-y-8 py-12 p-8">
-              <Image
+              <img
                 src="/img/huawei-logo.png"
-                width={160}
-                height={160}
                 alt="Logo Huawei"
+                className="w-40"
               />
             </div>
           </div>
           <div className="h-full transition flex items-center justify-center">
             <div className="relative space-y-8 py-12 p-8">
-              <Image
+              <img
                 src="/img/logoCpcon.png"
-                width={120}
-                height={120}
+                className="w-28"
                 alt="Logo Cpcon"
               />
             </div>
           </div>
           <div className="h-full transition flex items-center justify-center">
             <div className="relative space-y-8 py-12 p-8">
-              <Image
+              <img
                 src="/img/logoSumtec.png"
-                width={180}
-                height={180}
+                className="w-44"
                 alt="Logo Sumtec"
               />
             </div>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -6,13 +5,11 @@ const Navbar = () => {
     <nav className="px-6 lg:px-48">
       <div className="flex flex-wrap items-center justify-between mx-auto py-12">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <Image
+          <img
             src="/img/Logo2.png"
-            width={140}
-            height={140}
-            className="w-auto h-auto"
+            className="w-56"
             alt="Logo Competec"
-          ></Image>
+          ></img>
         </a>
         <button
           data-collapse-toggle="navbar-default"
