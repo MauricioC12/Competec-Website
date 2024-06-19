@@ -1,19 +1,48 @@
+"use client"
+import { useState } from 'react';
+
 const ContactForm = () => {
+  const [status, setStatus] = useState('');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    try {
+      const response = await fetch('/api', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setStatus('Form submitted successfully');
+        event.target.reset();
+      } else {
+        const result = await response.json();
+        setStatus(result.message || 'Error submitting form');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setStatus('Error submitting form');
+    }
+  };
+
   return (
-    <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+    <form onSubmit={handleSubmit} className="mx-auto mt-16 max-w-xl sm:mt-20">
       <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
         <div>
-          <label
-            htmlFor="first-name"
-            className="block text-sm font-semibold leading-6 text-gray-900"
-          >
+          <label htmlFor="name" className="block text-sm font-semibold leading-6 text-gray-900">
             Nombres
           </label>
           <div className="mt-2.5">
             <input
               type="text"
-              name="first-name"
-              id="first-name"
+              name="name"
+              id="name"
               required
               autoComplete="given-name"
               className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -21,28 +50,22 @@ const ContactForm = () => {
           </div>
         </div>
         <div>
-          <label
-            htmlFor="last-name"
-            className="block text-sm font-semibold leading-6 text-gray-900"
-          >
+          <label htmlFor="position" className="block text-sm font-semibold leading-6 text-gray-900">
             Cargo
           </label>
           <div className="mt-2.5">
             <input
               type="text"
-              name="last-name"
-              id="last-name"
+              name="position"
+              id="position"
               required
-              autoComplete="family-name"
+              autoComplete="charge"
               className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
         </div>
         <div className="sm:col-span-2">
-          <label
-            htmlFor="company"
-            className="block text-sm font-semibold leading-6 text-gray-900"
-          >
+          <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
             Empresa
           </label>
           <div className="mt-2.5">
@@ -56,12 +79,8 @@ const ContactForm = () => {
             />
           </div>
         </div>
-
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-semibold leading-6 text-gray-900"
-          >
+          <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
             Correo Comercial
           </label>
           <div className="mt-2.5">
@@ -76,28 +95,21 @@ const ContactForm = () => {
           </div>
         </div>
         <div>
-          <label
-            htmlFor="phone-number"
-            className="block text-sm font-semibold leading-6 text-gray-900"
-          >
+          <label htmlFor="phone" className="block text-sm font-semibold leading-6 text-gray-900">
             Número Telefónico
           </label>
           <div className="mt-2.5">
             <input
               type="tel"
-              name="phone-number"
-              id="phone-number"
+              name="phone"
+              id="phone"
               autoComplete="tel"
               className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
         </div>
-
         <div>
-          <label
-            htmlFor="last-name"
-            className="block text-sm font-semibold leading-6 text-gray-900"
-          >
+          <label htmlFor="service" className="block text-sm font-semibold leading-6 text-gray-900">
             ¿Servicios de interés?
           </label>
           <div className="mt-2.5">
@@ -109,10 +121,7 @@ const ContactForm = () => {
                 value="Cloud Solutions"
                 className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
               />
-              <label
-                htmlFor="cloud"
-                className="ml-3 block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="cloud" className="ml-3 block text-sm font-medium text-gray-700">
                 Cloud Solutions
               </label>
             </div>
@@ -124,10 +133,7 @@ const ContactForm = () => {
                 value="Ciberseguridad"
                 className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
               />
-              <label
-                htmlFor="cybersecurity"
-                className="ml-3 block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="cybersecurity" className="ml-3 block text-sm font-medium text-gray-700">
                 Ciberseguridad
               </label>
             </div>
@@ -139,10 +145,7 @@ const ContactForm = () => {
                 value="Diseño y Desarrollo Web"
                 className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
               />
-              <label
-                htmlFor="webDesign"
-                className="ml-3 block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="webDesign" className="ml-3 block text-sm font-medium text-gray-700">
                 Diseño y Desarrollo Web
               </label>
             </div>
@@ -154,10 +157,7 @@ const ContactForm = () => {
                 value="Capacitaciones IT"
                 className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
               />
-              <label
-                htmlFor="itTraining"
-                className="ml-3 block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="itTraining" className="ml-3 block text-sm font-medium text-gray-700">
                 Capacitaciones IT
               </label>
             </div>
@@ -169,20 +169,14 @@ const ContactForm = () => {
                 value="Otro"
                 className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
               />
-              <label
-                htmlFor="other"
-                className="ml-3 block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="other" className="ml-3 block text-sm font-medium text-gray-700">
                 Otro
               </label>
             </div>
           </div>
         </div>
         <div className="sm:col-span-2">
-          <label
-            htmlFor="message"
-            className="block text-sm font-semibold leading-6 text-gray-900"
-          >
+          <label htmlFor="message" className="block text-sm font-semibold leading-6 text-gray-900">
             Mensaje
           </label>
           <div className="mt-2.5">
@@ -191,7 +185,6 @@ const ContactForm = () => {
               id="message"
               rows={4}
               className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-              defaultValue={""}
             />
           </div>
         </div>
@@ -204,6 +197,7 @@ const ContactForm = () => {
           Enviar Mensaje
         </button>
       </div>
+      {status && <p>{status}</p>}
     </form>
   );
 };
