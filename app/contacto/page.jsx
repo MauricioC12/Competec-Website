@@ -1,5 +1,13 @@
-import ContactForm from "@/components/ContactForm";
+// import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const ContactForm = dynamic(
+  () => import("@/components/ContactForm"),
+  {
+    ssr: false
+  }
+);
 
 export default function Contacto() {
 
