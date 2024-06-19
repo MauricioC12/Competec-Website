@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <div className="py-20 px-6 lg:px-48">
+    <section className="py-20 px-6 lg:px-48 -scroll-mt-20" id="about-us">
       <div className="relative flex flex-col lg:flex-row h-screen dark:text-white border border-gray-400 rounded-xl dark:bg-[#141416]">
         <div className="relative lg:w-2/3 h-full flex items-center justify-center border-r border-gray-400">
           <video
@@ -30,7 +30,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

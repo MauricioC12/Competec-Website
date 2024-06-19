@@ -17,30 +17,30 @@ const Footer = () => {
               </p>
               <div className="mt-2 flex flex-col min-[470px]:flex-row max-[470px]:gap-4 items-center max-[470px]:justify-center">
                 <div className="flex items-center justify-center gap-10">
-                  <div className="flex items-center gap-3">
+                  <a className="flex items-center gap-3 transition-all duration-300 hover:font-bold focus-within:outline-0 focus-within:font-bold" href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61559521060311">
                     <img
                       src="/icons/facebook.png"
                       alt="Logo de Facebook"
                       className="w-5"
                     />
                     <span className="text-sm">Facebook</span>
-                  </div>
-                  <div className="flex items-center gap-2">
+                  </a>
+                  <a className="flex items-center gap-3 transition-all duration-300 hover:font-bold focus-within:outline-0 focus-within:font-bold" href="https://www.linkedin.com/company/competec-pe/">
                     <img
                       src="/icons/linkedin.png"
                       alt="Logo de LinkedIn"
                       className="w-5"
                     />
                     <span className="text-sm">LinkedIn</span>
-                  </div>
-                  <div className="flex items-center gap-2">
+                  </a>
+                  <a className="flex items-center gap-3 transition-all duration-300 hover:font-bold focus-within:outline-0 focus-within:font-bold" href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61559521060311">
                     <img
                       src="/icons/instagram.png"
                       alt="Logo de Instagram"
                       className="w-5"
                     />
                     <span className="text-sm">Instagram</span>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -53,7 +53,7 @@ const Footer = () => {
               <ul className="flex flex-col max-[470px]:items-center gap-6">
                 <li>
                   <a
-                    href="/services"
+                    href="#services"
                     className="text-base font-normal max-lg:text-center whitespace-nowrap transition-all duration-300 hover:font-bold focus-within:outline-0 focus-within:font-bold"
                   >
                     Cloud Solutions
@@ -61,7 +61,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/services"
+                    href="#services"
                     className="text-base font-normal max-lg:text-center whitespace-nowrap transition-all duration-300 hover:font-bold focus-within:outline-0 focus-within:font-bold"
                   >
                     Desarrollo Web
@@ -69,7 +69,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/services"
+                    href="#services"
                     className="text-base font-normal max-lg:text-center whitespace-nowrap transition-all duration-300 hover:font-bold focus-within:outline-0 focus-within:font-bold"
                   >
                     Ciberseguridad
@@ -77,7 +77,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/services"
+                    href="#services"
                     className="text-base font-normal max-lg:text-center whitespace-nowrap transition-all duration-300 hover:font-bold focus-within:outline-0 focus-within:font-bold"
                   >
                     Capacitaciones
@@ -92,7 +92,7 @@ const Footer = () => {
               <ul className="flex flex-col max-[470px]:items-center gap-12">
                 <li>
                   <a
-                    href="/about-us"
+                    href="#about-us"
                     className="text-base font-normal max-lg:text-center whitespace-nowrap transition-all duration-300 hover:font-bold focus-within:outline-0 focus-within:font-bold"
                   >
                     Nosotros
@@ -100,7 +100,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/services"
+                    href="#services"
                     className="text-base font-normal max-lg:text-center whitespace-nowrap transition-all duration-300 hover:font-bold focus-within:outline-0 focus-within:font-bold"
                   >
                     Servicios
@@ -122,20 +122,18 @@ const Footer = () => {
               </h6>
               <ul className="flex flex-col max-[470px]:items-center gap-12">
                 <li>
-                  <a
-                    href=""
-                    className="text-base font-normal max-lg:text-center whitespace-nowrap transition-all duration-300 hover:font-bold focus-within:outline-0 focus-within:font-bold"
+                  <span
+                    className="text-base font-normal max-lg:text-center whitespace-nowrap"
                   >
                     info@competec.com.pe
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a
-                    href=""
-                    className="text-base font-normal max-lg:text-center whitespace-nowrap transition-all duration-300 hover:font-bold focus-within:outline-0 focus-within:font-bold"
+                  <span
+                    className="text-base font-normal max-lg:text-center whitespace-nowrap"
                   >
-                    +51 992 084 413
-                  </a>
+                    +51 957 061 045
+                  </span>
                 </li>
               </ul>
             </div>

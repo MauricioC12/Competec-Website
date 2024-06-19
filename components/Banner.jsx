@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const Banner = () => {
   return (
-    <div className="py-8">
-      <section className="h-full py-10 px-6 lg:px-48">
+    <section className="py-24">
+      <div className="h-full px-6 lg:px-48">
         <div className="relative flex items-center justify-center h-96 dark:text-white">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative w-full flex gap-8 lg:flex-row flex-col items-center justify-between">
@@ -27,8 +27,8 @@ const Banner = () => {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

@@ -1,35 +1,51 @@
 "use client"
 import { useState } from 'react';
+import { collection, addDoc } from 'firebase/firestore'
+import { db } from '../app/firebaseConfig'
+
+async function addDataToFireStore(name, position, company, email, phone, service, message) {
+  try {
+    const docRef = await addDoc(collection(db, "messages"), {
+      name: name,
+      position: position,
+      company: company,
+      email: email, 
+      phone: phone,
+      service: service,
+      message: message
+    });
+    console.log("Document written with Id: ", docRef.id);
+    return true;
+  } catch (error) {
+    console.error("Error adding document ", error)
+    return false;
+  }
+}
 
 const ContactForm = () => {
-  const [status, setStatus] = useState('');
+  const [name, setName] = useState('');
+  const [position, setPosition] = useState('');
+  const [company, setCompany] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [service, setService] = useState('');
+  const [message, setMessage] = useState('');
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const added = await addDataToFireStore(name, position, company, email, phone, service, message);
+    if (added) {
+      setName("")
+      setPosition("")
+      setCompany("")
+      setEmail("")
+      setPhone("")
+      setService("")
+      setMessage("")
 
-    try {
-      const response = await fetch('/api', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        setStatus('Form submitted successfully');
-        event.target.reset();
-      } else {
-        const result = await response.json();
-        setStatus(result.message || 'Error submitting form');
-      }
-    } catch (error) {
-      console.error('Submission error:', error);
-      setStatus('Error submitting form');
+      alert("Data added to firestore DB!!")
     }
-  };
+  }
 
   return (
     <form onSubmit={handleSubmit} className="mx-auto mt-16 max-w-xl sm:mt-20">
@@ -45,6 +61,8 @@ const ContactForm = () => {
               id="name"
               required
               autoComplete="given-name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
@@ -60,6 +78,8 @@ const ContactForm = () => {
               id="position"
               required
               autoComplete="charge"
+              value={position}
+              onChange={(e) => setPosition(e.target.value)}
               className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
@@ -75,6 +95,8 @@ const ContactForm = () => {
               id="company"
               required
               autoComplete="organization"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
               className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
@@ -90,6 +112,8 @@ const ContactForm = () => {
               id="email"
               required
               autoComplete="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
@@ -104,6 +128,8 @@ const ContactForm = () => {
               name="phone"
               id="phone"
               autoComplete="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
@@ -119,6 +145,7 @@ const ContactForm = () => {
                 name="service"
                 type="radio"
                 value="Cloud Solutions"
+                onChange={(e) => setService(e.target.value)}
                 className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
               />
               <label htmlFor="cloud" className="ml-3 block text-sm font-medium text-gray-700">
@@ -131,6 +158,7 @@ const ContactForm = () => {
                 name="service"
                 type="radio"
                 value="Ciberseguridad"
+                onChange={(e) => setService(e.target.value)}
                 className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
               />
               <label htmlFor="cybersecurity" className="ml-3 block text-sm font-medium text-gray-700">
@@ -143,6 +171,7 @@ const ContactForm = () => {
                 name="service"
                 type="radio"
                 value="Diseño y Desarrollo Web"
+                onChange={(e) => setService(e.target.value)}
                 className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
               />
               <label htmlFor="webDesign" className="ml-3 block text-sm font-medium text-gray-700">
@@ -155,6 +184,7 @@ const ContactForm = () => {
                 name="service"
                 type="radio"
                 value="Capacitaciones IT"
+                onChange={(e) => setService(e.target.value)}
                 className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
               />
               <label htmlFor="itTraining" className="ml-3 block text-sm font-medium text-gray-700">
@@ -167,6 +197,7 @@ const ContactForm = () => {
                 name="service"
                 type="radio"
                 value="Otro"
+                onChange={(e) => setService(e.target.value)}
                 className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"
               />
               <label htmlFor="other" className="ml-3 block text-sm font-medium text-gray-700">
@@ -184,6 +215,8 @@ const ContactForm = () => {
               name="message"
               id="message"
               rows={4}
+              value={message}
+                onChange={(e) => setMessage(e.target.value)}
               className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
