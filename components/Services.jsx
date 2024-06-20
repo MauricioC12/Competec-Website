@@ -15,11 +15,11 @@ const Services = () => {
         <div className="relative container flex flex-col lg:flex-row  mx-auto">
           <div className="flex items-center justify-center">
             <div className="text-center lg:text-start px-10 lg:px-40">
-              <h2 className="text-[#005AAA] text-lg font-bold mb-4">
+              <h2 className="text-[#78BBF8] text-lg font-bold mb-4">
                 SERVICIOS
               </h2>
               <h1 className="text-3xl text-white font-bold">
-                Transformamos la industria con el poder de la tecnología
+                Transformamos la industria con el poder de la <br /> tecnología
               </h1>
             </div>
           </div>
@@ -27,12 +27,12 @@ const Services = () => {
             <div className="bg-white flex flex-col justify-between h-[348px] shadow-lg rounded-lg p-8 w-64 text-start transform translate-y-10 lg:-translate-y-10">
               <div className="mb-6">
                 <img
-                  src="/icons/cloud-service.png"
-                  alt="ícono de ciberseguridad"
+                  src="/icons/cloud.png"
+                  alt="ícono de cloud service"
                   className="w-14 h-14"
                 />
               </div>
-              <h4 className="text-xl text-[#005AAA] font-semibold">
+              <h4 className="text-xl text-[#78BBF8] font-semibold">
                 Cloud <br /> Solutions
               </h4>
               <p className="text-[#8A8A8A]">
@@ -44,11 +44,11 @@ const Services = () => {
               <div className="mb-6">
                 <img
                   src="/icons/desarrollo-web.png"
-                  alt="ícono de ciberseguridad"
+                  alt="ícono de desarrollo web"
                   className="w-14 h-14"
                 />
               </div>
-              <h4 className="text-xl text-[#005AAA] font-semibold mb-4">
+              <h4 className="text-xl text-[#78BBF8] font-semibold mb-4">
                 Diseño y <br /> Desarrollo Web
               </h4>
               <p className="text-[#8A8A8A]">
@@ -65,7 +65,7 @@ const Services = () => {
                   className="w-14 h-14"
                 />
               </div>
-              <h4 className="text-xl text-[#005AAA] font-semibold">
+              <h4 className="text-xl text-[#78BBF8] font-semibold">
                 Ciberseguridad
               </h4>
               <p className="text-[#8A8A8A]">
@@ -76,12 +76,12 @@ const Services = () => {
             <div className="bg-white flex flex-col justify-between shadow-lg rounded-lg p-8 text-start w-64 transform translate-y-10 -translate-x-2 lg:-translate-x-1 lg:translate-y-8">
               <div className="mb-6">
                 <img
-                  src="/icons/ti.png"
-                  alt="ícono de ciberseguridad"
+                  src="/icons/capacitaciones.png"
+                  alt="ícono de capacitaciones"
                   className="w-14 h-14"
                 />
               </div>
-              <h4 className="text-xl text-[#005AAA] font-semibold mb-4">
+              <h4 className="text-xl text-[#78BBF8] font-semibold mb-4">
                 Capacitaciones <br /> de TI
               </h4>
               <p className="text-[#8A8A8A]">

@@ -19,14 +19,18 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="lg:w-1/2 flex items-center justify-center p-8">
-          <div className="max-w-md">
-            <p className="text-lg p-4 lg:p-20  text-[#8A8A8A]">
-              Somos <span className="font-bold text-[#00274A]">Competec</span>,
+          <div className="max-w-md p-4 lg:p-20">
+            <p className="mb-6 text-lg text-[#8A8A8A]">
+              Somos <span className="font-bold text-[#78BBF8]">Competec</span>,
               empresa especializada en consultoría y asesoramiento en
               Tecnologías Cloud. Con experiencia en el sector y un equipo
               calificado, ayudamos a las empresas a adoptar y optimizar
               soluciones en la nube.
             </p>
+            <p className="mb-6 text-lg text-[#8A8A8A]">
+              Acompañamiento 360° en su adopción a la nube de <span className="font-bold text-[#8A8A8A]">Huawei</span>.
+            </p>
+            <p className="text-lg text-[#8A8A8A]">Escuchamos tus necesidades, nos alineamos con sus objetivos y lo apoyamos para que los alcance.</p>
           </div>
         </div>
       </div>
