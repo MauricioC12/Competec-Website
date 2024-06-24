@@ -1,5 +1,6 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -7,13 +8,16 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Competec",
+  title: {
+    default: "Competec",
+    template: "%s - Competec"
+  },
   description: "Somos Competec, empresa especializada en consultoría y asesoramiento en Tecnologías Cloud.",
   keywords: ["TI", "Cloud", "Desarrollo Web", "Capacitacion"],
   openGraph: {
     type: "website",
     locale: "es_Es",
-    url: "https://www.competec.com.pe",
+    url: "competec.com.pe",
     siteName: "Competec",
     title: "Competec",
     description: "Somos Competec, empresa especializada en consultoría y asesoramiento en Tecnologías Cloud.",
@@ -31,7 +35,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es" className="scroll-smooth">
-      <head>
+      <Head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
@@ -39,7 +43,7 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/site.webmanifest"/>
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
         <meta name="robots" content="index, follow" />
-      </head>
+      </Head>
       <body className={`${poppins.className} dark:bg-[#1f1f22] bg-white`}>
         {children}
       </body>

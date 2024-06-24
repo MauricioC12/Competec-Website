@@ -9,6 +9,10 @@ const ContactForm = dynamic(
   }
 );
 
+export const metadata = {
+  title: "Contacto"
+}
+
 export default function Contacto() {
 
   return (
