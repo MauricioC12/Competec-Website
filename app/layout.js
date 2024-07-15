@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
-import "./globals.css";
+import { GoogleAnalytics } from '@next/third-parties/google'
 import Head from "next/head";
+import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.className} dark:bg-[#1f1f22] bg-white`}>
         {children}
       </body>
+      <GoogleAnalytics gaId="G-TEPWCBTYTQ" />
     </html>
   );
 }
