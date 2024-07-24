@@ -55,7 +55,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                href="/blog"
+                href="#blog"
                 className="block py-2 px-4 font-bold text-[#00274A] dark:text-white rounded md:border-0 hover:text-blue-700 md:p-0"
               >
                 Blog

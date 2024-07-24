@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import animations from '@midudev/tailwind-animations'
+
 module.exports = {
   darkMode: "class",
   content: [
@@ -11,6 +13,8 @@ module.exports = {
   },
   plugins: [
     require('daisyui'),
-    require('flowbite/plugin')
+    require('flowbite/plugin'),
+    require('tailwindcss-animated'),
+    animations
   ],
 };
