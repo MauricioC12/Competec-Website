@@ -1,22 +1,20 @@
 "use client"
 import { useState } from 'react';
-import { collection, addDoc } from 'firebase/firestore'
-import { db } from '../app/firebaseConfig'
 
-async function addDataToFireStore(name, position, company, email, phone, service, message) {
+async function sendData(data) {
   try {
-    const docRef = await addDoc(collection(db, "messages"), {
-      name: name,
-      position: position,
-      company: company,
-      email: email, 
-      phone: phone,
-      service: service,
-      message: message
+    const response = await fetch('https://competec.com.pe/api/submit_form.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
     });
-    return true;
+
+    const result = await response.json();
+    return result.success;
   } catch (error) {
-    console.error("Error adding document ", error)
+    console.error("Error al enviar los datos: ", error);
     return false;
   }
 }
@@ -32,22 +30,33 @@ const ContactForm = () => {
   const [messageSent, setMessageSent] = useState(false);
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    const added = await addDataToFireStore(name, position, company, email, phone, service, message);
+    e.preventDefault();
+    const data = {
+      name,
+      position,
+      company,
+      email,
+      phone,
+      service,
+      message
+    };
+    
+    const added = await sendData(data);
     if (added) {
-      setName("")
-      setPosition("")
-      setCompany("")
-      setEmail("")
-      setPhone("")
-      setService("")
-      setMessage("")
-      setMessageSent(true)
+      setName("");
+      setPosition("");
+      setCompany("");
+      setEmail("");
+      setPhone("");
+      setService("");
+      setMessage("");
+      setMessageSent(true);
       setTimeout(() => {
-        setMessageSent(false)
+        setMessageSent(false);
       }, 3000);
     }
   }
+
 
   return (
     <form onSubmit={handleSubmit} className="mx-auto mt-16 max-w-xl sm:mt-20">
