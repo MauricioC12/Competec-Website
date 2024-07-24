@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <section className="mt-20 py-12 bg-[#20386C]">
+    <section className="mt-16 py-12 bg-[#20386C]">
       <div className="mx-auto max-w-7xl px-4  text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-24 pb-14 border-b-2 border-gray-200">
           <div className="block w-full lg:max-w-full max-lg:mx-auto">

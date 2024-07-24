@@ -10,6 +10,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@next/third-parties": "^14.2.5",
     "express": "^4.19.2",
     "firebase": "^10.12.2",
     "flowbite": "^2.3.0",

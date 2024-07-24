@@ -1,13 +1,13 @@
 const AboutUs = () => {
   return (
-    <section className="py-20 px-6 lg:px-48 -scroll-mt-20" id="about-us">
-      <div className="relative flex flex-col lg:flex-row h-screen dark:text-white border border-gray-400 rounded-xl dark:bg-[#141416]">
-        <div className="relative lg:w-2/3 h-full flex items-center justify-center border-r border-gray-400">
+    <section className="py-12 px-6 lg:px-40 -scroll-mt-20" id="about-us">
+      <div className="relative flex flex-col lg:flex-row h-full dark:text-white border border-gray-400 rounded-xl dark:bg-[#141416]">
+        <div className="relative lg:w-2/3 flex items-center justify-center lg:border-r border-gray-400">
           <video
             autoPlay
             loop
             muted
-            className="absolute inset-0 w-full h-full object-cover rounded-tl-xl rounded-bl-lg brightness-75"
+            className="absolute inset-0 w-full h-full object-cover rounded-tl-xl rounded-tr-xl lg:rounded-tr-none lg:rounded-bl-lg brightness-75"
           >
             <source
               src="/videos/about-us.mp4"
@@ -18,7 +18,7 @@ const AboutUs = () => {
             <h1 className="text-4xl font-bold text-white">¿Quiénes Somos?</h1>
           </div>
         </div>
-        <div className="lg:w-1/2 flex items-center justify-center p-8">
+        <div className="lg:w-1/2 h-full flex items-center justify-center p-8">
           <div className="max-w-md p-4 lg:p-20">
             <p className="mb-6 text-lg text-[#8A8A8A]">
               Somos <span className="font-bold text-[#78BBF8]">Competec</span>,

@@ -1,5 +1,6 @@
 import AboutUs from "@/components/AboutUs";
 import Banner from "@/components/Banner";
+import BlogSection from "@/components/BlogSection";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Partners from "@/components/Partners";
@@ -14,6 +15,7 @@ export default function Home() {
       <Services />
       <AboutUs />
       <Partners />
+      <BlogSection />
       <Footer />
     </>
   );

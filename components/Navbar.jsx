@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="px-6 lg:px-48">
+    <nav className="px-6 lg:px-40">
       <div className="flex flex-wrap items-center justify-between mx-auto py-12">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
@@ -40,8 +40,7 @@ const Navbar = () => {
             <li>
               <a
                 href="#services"
-                className="block py-2 px-3 font-bold text-[#00274A] dark:text-white rounded md:bg-transparent md:p-0"
-                aria-current="page"
+                className="block py-2 px-4 font-bold text-[#00274A] dark:text-white rounded md:border-0 hover:text-blue-700 md:bg-transparent md:p-0"
               >
                 Servicios
               </a>
@@ -49,15 +48,23 @@ const Navbar = () => {
             <li>
               <a
                 href="#about-us"
-                className="block py-2 px-3 font-bold text-[#00274A] dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+                className="block py-2 px-4 font-bold text-[#00274A] dark:text-white rounded md:border-0 hover:text-blue-700 md:p-0"
               >
                 Nosotros
               </a>
             </li>
             <li>
               <Link
+                href="/blog"
+                className="block py-2 px-4 font-bold text-[#00274A] dark:text-white rounded md:border-0 hover:text-blue-700 md:p-0"
+              >
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/contacto"
-                className="block py-2 px-3 font-bold text-[#00274A] dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+                className="block py-2 px-4 font-bold text-[#00274A] dark:text-white rounded md:border-0 hover:text-blue-700 md:p-0"
               >
                 Contacto
               </Link>
