@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 import React from "react";
 
 const DesarrolloWeb = () => {
@@ -205,9 +206,9 @@ const DesarrolloWeb = () => {
 
             <div className="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
               <div className="p-4 border-t border-b md:border md:rounded">
-                <div className="flex py-2">
+                <div className="flex py-4">
                   <img
-                    src="https://randomuser.me/api/portraits/men/97.jpg"
+                    src="/img/FotoMauricio.jpg"
                     className="h-10 w-10 rounded-full mr-2 object-cover"
                   />
                   <div>
@@ -221,14 +222,14 @@ const DesarrolloWeb = () => {
                     </p>
                   </div>
                 </div>
-                <p className="text-gray-700 py-3">
-                  Mike writes about technology Yourself required no at thoughts
-                  delicate landlord it be. Branched dashwood do is whatever it.
-                </p>
-                <button className="px-2 py-1 text-gray-100 bg-green-700 flex w-full items-center justify-center rounded">
-                  Follow
+                <Link
+                  href="https://www.linkedin.com/in/mauricio-contreras-rivas"
+                  target="_blank"
+                  className="px-1 py-1 flex w-full items-center justify-center rounded text-gray-100 bg-[#005AAA] hover:bg-blue-500"
+                >
+                  Seguir
                   <i className="bx bx-user-plus ml-2"></i>
-                </button>
+                </Link>
               </div>
             </div>
           </div>
