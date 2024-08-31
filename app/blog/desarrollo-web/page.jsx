@@ -1,8 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import Link from "next/link";
-import React from "react";
+import Image from "next/image";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Header";
+import BlogWeb from "@/public/img/blog-web.jpg";
+import FotoMauricio from "@/public/img/FotoMauricio.jpg";
 
 const DesarrolloWeb = () => {
   return (
@@ -16,17 +18,14 @@ const DesarrolloWeb = () => {
                 Innovación y Creatividad en la web: Lo que debes saber para
                 mantener tu sitio a la vanguardia
               </h1>
-              <a
-                href="#"
-                className="py-2 text-[#78BBF8] font-bold inline-flex items-center justify-center mb-2"
-              >
+              <span className="py-2 text-[#78BBF8] font-bold inline-flex items-center justify-center mb-2">
                 Tecnología
-              </a>
+              </span>
             </div>
-
-            <img
-              src="/img/blog-web.jpg"
+            <Image
+              src={BlogWeb}
               className="w-full object-cover lg:rounded"
+              alt="Innovación y Creatividad en la web: Lo que debes saber para mantener tu sitio a la vanguardia"
             />
           </div>
 
@@ -207,8 +206,9 @@ const DesarrolloWeb = () => {
             <div className="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
               <div className="p-4 border-t border-b md:border md:rounded">
                 <div className="flex py-4">
-                  <img
-                    src="/img/FotoMauricio.jpg"
+                  <Image
+                    src={FotoMauricio}
+                    alt="Foto de Mauricio"
                     className="h-10 w-10 rounded-full mr-2 object-cover"
                   />
                   <div>

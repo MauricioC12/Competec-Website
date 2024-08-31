@@ -12,9 +12,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('daisyui'),
     require('flowbite/plugin'),
-    require('tailwindcss-animated'),
     animations
   ],
 };

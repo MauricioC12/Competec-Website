@@ -10,22 +10,23 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
     "@midudev/tailwind-animations": "^0.0.7",
     "@next/third-parties": "^14.2.5",
-    "express": "^4.19.2",
     "flowbite": "^2.3.0",
-    "flowbite-react": "^0.9.0",
     "next": "14.2.4",
     "next-sitemap": "^4.2.3",
-    "react": "^18",
+    "react": "^18.3.1",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "daisyui": "^4.12.2",
+    "@types/node": "22.0.1",
+    "@types/react": "18.3.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "typescript": "5.5.4"
   },
   "description": "This is the oficial website for Competec",
   "main": "tailwind.config.js",

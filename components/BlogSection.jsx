@@ -1,101 +1,140 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import Link from "next/link";
+import BlogWeb from "@/public/img/blog-web.jpg";
+import BlogComputing from "@/public/img/cloud-computing.png";
+import BlogCibersecurity from "@/public/img/ciberseguridad.jpg";
+import BlogCapacitaciones from "@/public/img/capacitaciones.jpg";
 
 const BlogSection = () => {
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-40 mx-auto" id="blog">
+    <section className="py-12 px-4 sm:px-6 lg:px-40 mx-auto" id="blog">
       <h2 className="text-3xl font-extrabold text-[#00274A] mb-8">
         Blogs Recientes
       </h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        {/* Tarjeta principal grande a la izquierda */}
-        <div className="lg:col-span-1 h-full flex flex-col overflow-hidden">
-          <Link href="/blog/desarrollo-web" className="pointer">
-            <img
-              src="/img/blog-web.jpg"
+      <div className="container py-6 mx-auto space-y-6 sm:space-y-12">
+        {/* Tarjeta Grande */}
+        <div className="lg:px-7 block max-w-sm gap-3 mx-auto sm:max-w-full lg:grid lg:grid-cols-12">
+          <Link href="/blog/desarrollo-web" className="pointer lg:col-span-7">
+            <Image
+              src={BlogWeb}
+              className="w-full h-64 sm:h-96 object-cover rounded"
               alt="Innovación y Creatividad en la web: Lo que debes saber para mantener tu sitio a la vanguardia"
-              className="w-full h-[30rem] lg:h-[20.5rem] object-cover rounded-lg"
             />
           </Link>
-          <div className="py-4">
-            <p className="my-3 text-sm text-gray-500">16 May, 2024</p>
-            <h3 className="text-lg font-semibold text-gray-800">
-              Innovación y Creatividad en la web: Lo que debes saber para
+          <div className="p-4 space-y-2 lg:col-span-5">
+            <h3 className="mb-3 text-xl font-semibold sm:text-4xl">
+              Innovación y creatividad en la web: Lo que debes saber para
               mantener tu sitio a la vanguardia
             </h3>
-            <p className="text-sm text-gray-600 mt-2">
-              En este artículo, exploraremos algunas de las tendencias más
-              relevantes en diseño y desarrollo web para 2024.
+            <span className="text-xs">February 19, 2021</span>
+            <p>
+              ¿Es esencial que las empresas mantengan sus sitios web con las
+              últimas tendencias? En este artículo, exploraremos algunas de las
+              tendencias más relevantes en diseño y desarrollo web para 2024.
             </p>
-            <div className="mt-4">
-              <span className="blog-badge med-lg">Desarrollo Web</span>
-              <span className="blog-badge med-lg">Frontend</span>
+            <div className="pt-3 flex gap-2">
+              <span className="blog-badge">Desarrollo Web</span>
+              <span className="blog-badge">Frontend</span>
               <span className="blog-badge">Tecnología</span>
             </div>
           </div>
         </div>
 
-        {/* Tarjetas pequeñas a la derecha */}
-        <div className="flex flex-col gap-5">
-          <div className="flex lg:flex-row flex-col items-center overflow-hidden">
-            <Link
-              href="/blog/servicios-cloud"
-              className="pointer h-[28rem] lg:w-[90%] lg:h-64"
-            >
-              <img
-                src="/img/cloud-computing.png"
-                alt="Una Guía Completa para Entender el Cloud Computing y sus Beneficios"
-                className="h-full object-cover rounded-lg"
+        {/* Card 1 */}
+        <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="max-w-sm mx-auto group hover:no-underline focus:no-underline">
+            <Link href="/blog/servicios-cloud">
+              <Image
+                src={BlogComputing}
+                className="object-cover w-full rounded h-52"
+                alt="Una guía completa para entender el Cloud Computing y sus beneficios"
               />
             </Link>
-            <div className="p-4">
-              <p className="mb-4 text-sm text-gray-500">19 Jul, 2024</p>
-              <h3 className="mb-2 text-lg font-semibold text-gray-800">
+            <div className="py-6 px-2 space-y-2">
+              <h3 className="mb-2 text-xl font-semibold">
                 Una guía completa para entender el Cloud Computing y sus
                 beneficios
               </h3>
-              <p className="text-sm text-gray-600 mt-2">
-                Explora qué son los servicios cloud, sus tipos, beneficios y
-                cómo pueden impactar tu organización.
+              <span className="text-xs">January 21, 2021</span>
+              <p>
+                ¿Las organizaciones adoptan soluciones cloud para mejorar y
+                reducir costos? En este artículo, exploramos las principales
+                ventajas del cloud computing para empresas en 2024.
               </p>
-              <div className="mt-6">
-                <span className="blog-badge mr-2">Cloud</span>
-                <span className="blog-badge mr-2">TI</span>
+              <div className="pt-3 flex gap-2">
+                <span className="blog-badge">Cloud</span>
+                <span className="blog-badge">TI</span>
                 <span className="blog-badge">Tecnología</span>
               </div>
             </div>
           </div>
 
-          <div className="flex lg:flex-row flex-col items-center overflow-hidden">
-            <Link
-              href="/blog/ciberseguridad"
-              className="pointer h-[30rem] lg:w-[91.5%] lg:h-64"
-            >
-              <img
-                src="/img/ciberseguridad.jpg"
-                alt="La Importancia de la Ciberseguridad en 2024"
-                className="h-full object-cover rounded-lg"
+          {/* Card 2 */}
+          <div className="max-w-sm mx-auto group hover:no-underline focus:no-underline">
+            <Link href="/blog/ciberseguridad">
+              <Image
+                src={BlogCibersecurity}
+                className="object-cover w-full rounded h-52"
+                alt="La importancia de la Ciberseguridad en 2024"
               />
             </Link>
-            <div className="p-4">
-              <p className="mb-4 text-sm text-gray-500">26 Jul, 2024</p>
-              <h3 className="mb-2 text-lg font-semibold text-gray-800">
-                La importancia de la Ciberseguridad: Protección en el mundo
-                digital
+            <div className="py-6 px-2 space-y-2">
+              <h3 className="mb-2 text-xl font-semibold">
+                La importancia de la Ciberseguridad en 2024: Protección en el
+                mundo digital
               </h3>
-              <p className="text-sm text-gray-600 mt-2">
-                Explora su importancia actual, las amenazas comunes y cómo
-                protegerse eficazmente contra ellas.
+              <span className="text-xs">January 21, 2021</span>
+              <p>
+                Este artículo explora la importancia de la ciberseguridad en
+                2024, las amenazas más comunes y cómo protegerse eficazmente
+                contra ellas.
               </p>
-              <div className="mt-6">
-                <span className="blog-badge mr-2">Ciberseguridad</span>
+              <div className="pt-3 flex gap-2">
+                <span className="blog-badge">Ciberseguridad</span>
+                <span className="blog-badge">Seguridad</span>
+                <span className="blog-badge">Tecnología</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="max-w-sm mx-auto group hover:no-underline focus:no-underline">
+            <Link href="/blog/ti">
+              <Image
+                src={BlogCapacitaciones}
+                className="object-cover w-full rounded h-52"
+                alt="Capacitaciones de TI: Clave para el crecimiento profesional en la era digital"
+              />
+            </Link>
+            <div className="py-6 px-2 space-y-2">
+              <h3 className="mb-2 text-xl font-semibold">
+                Capacitaciones de TI: Clave para el crecimiento profesional en
+                la era digital
+              </h3>
+              <span className="text-xs">January 21, 2021</span>
+              <p>
+                ¿Estas capacitaciones son esenciales en el campo tech? Este
+                artículo explora su importancia, sus beneficios y cómo elegir el
+                programa adecuado para tu carrera.
+              </p>
+              <div className="pt-3 flex gap-2">
+                <span className="blog-badge">Capacitaciones</span>
+                <span className="blog-badge">TI</span>
                 <span className="blog-badge">Tecnología</span>
               </div>
             </div>
           </div>
         </div>
+        {/* <div className="flex justify-center">
+          <button
+            type="button"
+            className="px-6 py-3 text-sm rounded-md hover:underline"
+          >
+            Load more posts...
+          </button>
+        </div> */}
       </div>
-    </div>
+    </section>
   );
 };
 

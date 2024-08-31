@@ -1,12 +1,17 @@
-"use client"
+"use client";
 import Link from "next/link";
+import BannerImage from "@/public/img/banner.png";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import Image from "next/image";
 
 const Banner = () => {
   const { ref: partnerSectionRef, isVisible } = useScrollAnimation(0.4);
 
   return (
-    <section ref={partnerSectionRef} className="py-12 lg:py-24 md:h-screen h-[30rem] lg:h-full">
+    <section
+      ref={partnerSectionRef}
+      className="py-12 lg:py-24 md:h-screen h-[30rem] lg:h-full"
+    >
       <div className="container mx-auto w-full px-6 lg:px-20 h-full">
         <div className="relative flex items-center justify-center h-full min-h-[50vh] dark:text-white">
           <div className="absolute inset-0 flex items-center justify-center">
@@ -24,19 +29,26 @@ const Banner = () => {
                 />
               </div>
               <div className="w-full md:w-3/4 lg:w-1/2">
-                <img
-                  src="/img/banner.png"
-                  alt="Banner"
-                  className="mx-auto lg:mx-0"
+                <Image
+                  src={BannerImage}
+                  alt="Imagen de Banner"
+                  className="mx-auto md:mx-0"
+                  loading="eager"
                 />
               </div>
               <div className="w-full lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-right">
-                <h1 className={`lg:pl-10 text-3xl lg:text-[3.7rem] text-[#00274A] font-bold lg:leading-tight tracking-wider ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
+                <h1
+                  className={`lg:pl-10 text-3xl lg:text-[3.7rem] text-[#00274A] font-bold lg:leading-tight tracking-wider ${
+                    isVisible ? "animate-fade-in-left" : "opacity-0"
+                  }`}
+                >
                   Soluciones Que Transforman Tu Negocio
                 </h1>
                 <Link
                   href="/contacto"
-                  className={`mt-8 inline-block bg-[#005AAA] hover:bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}
+                  className={`mt-8 inline-block bg-[#005AAA] hover:bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg ${
+                    isVisible ? "animate-fade-in-left" : "opacity-0"
+                  }`}
                 >
                   Cotiza nuestros servicios
                 </Link>
